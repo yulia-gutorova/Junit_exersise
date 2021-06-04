@@ -16,56 +16,60 @@ public class QuoteTest {
         System.out.println("Quote method tests");
     }
 
-    @BeforeEach
-    void setUp() {
-        System.out.println("         ---------- Test body ----------");
-    }
-    Lab1 lab = new Lab1();
+    Calculator2 lab = new Calculator2();
 
 //-------------------------------------------------------------------------------------------------------
-    @Test
-    @Order(1)
-    @DisplayName("Test the origin quote() method")
-    void TestQuote()
-    {
-        String q = lab.quote();
+    @Nested
+    @DisplayName("Testing origin quote() method")
+    class whenQuote {
 
-        assertNotNull(q);
-        assertTrue(q.contains("We cannot solve our problems with the same thinking we used when we created them. - Albert Einstein")||
-                q.contains("A fool thinks himself to be wise, but a wise man knows himself to be a fool. - William Shakespeare") ||
-                q.contains("You must be the change you wish to see in the world. - Mahatma Gandhi") ||
-                q.contains("In the End, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King, Jr.") ||
-                q.contains("Choose a job you love, and you will never have to work a day in your life. - Confucius") ||
-                q.contains("To expect the unexpected shows a thoroughly modern intellect. - Oscar Wilde") ||
-                q.contains("Without music, life would be a mistake. - Friedrich Nietzsche") ||
-                q.contains("I love deadlines. I like the whooshing sound they make as they fly by. - Douglas Adams"));
-    }
+        @Test
+        @Order(1)
+        @DisplayName("Test the origin quote() method")
+        void TestQuote() {
+            String q = lab.quote();
 
+            assertNotNull(q);
+            assertTrue(q.contains("We cannot solve our problems with the same thinking we used when we created them. - Albert Einstein") ||
+                    q.contains("A fool thinks himself to be wise, but a wise man knows himself to be a fool. - William Shakespeare") ||
+                    q.contains("You must be the change you wish to see in the world. - Mahatma Gandhi") ||
+                    q.contains("In the End, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King, Jr.") ||
+                    q.contains("Choose a job you love, and you will never have to work a day in your life. - Confucius") ||
+                    q.contains("To expect the unexpected shows a thoroughly modern intellect. - Oscar Wilde") ||
+                    q.contains("Without music, life would be a mistake. - Friedrich Nietzsche") ||
+                    q.contains("I love deadlines. I like the whooshing sound they make as they fly by. - Douglas Adams"));
+        }
 
+}
 //-------------------------------------------------------------------------------------------------------
-    @Test
-    @Order(2)
-    @DisplayName("Test Switch statement with Random generator")
-    void testRandom() {
+    @Nested
+    @DisplayName("Testing newQuote() method")
+    class whenNew {
 
-        int number = lab.getRandomNumber();
-        System.out.println("Number: " + number);
+        @Test
+        @Order(2)
+        @DisplayName("Test a new quote() method")
+        void testRandom() {
 
-        String quote = lab.newQuote(number);
+            int number = lab.getRandomNumber();
+            System.out.println("Number: " + number);
 
-        List<String> quotes = new ArrayList<>();
-        quotes.add("We cannot solve our problems with the same thinking we used when we created them. - Albert Einstein");
-        quotes.add("A fool thinks himself to be wise, but a wise man knows himself to be a fool. - William Shakespeare");
-        quotes.add("You must be the change you wish to see in the world. - Mahatma Gandhi");
-        quotes.add("In the End, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King, Jr.");
-        quotes.add("Choose a job you love, and you will never have to work a day in your life. - Confucius");
-        quotes.add("To expect the unexpected shows a thoroughly modern intellect. - Oscar Wilde");
-        quotes.add("Without music, life would be a mistake. - Friedrich Nietzsche");
-        quotes.add("I love deadlines. I like the whooshing sound they make as they fly by. - Douglas Adams");
+            String quote = lab.newQuote(number);
 
-        System.out.println("List: " + quotes.get(number - 1));
+            List<String> quotes = new ArrayList<>();
+            quotes.add("We cannot solve our problems with the same thinking we used when we created them. - Albert Einstein");
+            quotes.add("A fool thinks himself to be wise, but a wise man knows himself to be a fool. - William Shakespeare");
+            quotes.add("You must be the change you wish to see in the world. - Mahatma Gandhi");
+            quotes.add("In the End, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King, Jr.");
+            quotes.add("Choose a job you love, and you will never have to work a day in your life. - Confucius");
+            quotes.add("To expect the unexpected shows a thoroughly modern intellect. - Oscar Wilde");
+            quotes.add("Without music, life would be a mistake. - Friedrich Nietzsche");
+            quotes.add("I love deadlines. I like the whooshing sound they make as they fly by. - Douglas Adams");
 
-        assertEquals(quotes.get(number - 1), lab.newQuote(number));
-    }
+            System.out.println("List: " + quotes.get(number - 1));
+
+            assertEquals(quotes.get(number - 1), lab.newQuote(number));
+        }
+}
 }
 

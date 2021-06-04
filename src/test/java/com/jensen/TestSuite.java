@@ -5,10 +5,11 @@ import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
-@SelectClasses({TestCupSettersAndGetters.class,
-        TestCupConstructor.class,
+@SelectClasses({
         CalculatorTest.class,
         Calculator2Test.class,
-        BookTest.class})
+        BookTest.class,
+        QuoteTest.class
+})
 public class TestSuite {
 }

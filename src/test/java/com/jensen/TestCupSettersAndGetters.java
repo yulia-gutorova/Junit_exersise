@@ -66,7 +66,7 @@ public class TestCupSettersAndGetters {
 //---------------------------------------------
     @Test
     @Order(4)
-    @DisplayName("Setters: Test that liquid type cannot be changed to null")
+    @DisplayName("Setters: Test that liquid type cannot be null")
     void testThatLiquidTypeCannotBeChangedToNull ()
     {
         cup.setLiquidType("water");
@@ -74,14 +74,5 @@ public class TestCupSettersAndGetters {
 
         assertEquals("water", cup.getLiquidType());
     }
-
-/*    @Test
-    @Order(3)
-    @DisplayName("Setters: Test that liguid type cannot be changed to null")
-    void testThatLiquidTypeCannotBeChangedToNull1 ()
-    {
-        cup.setPercentFull(-1);
-        System.out.println("Perc: " + cup.getPercentFull());
-    }*/
 
 }
