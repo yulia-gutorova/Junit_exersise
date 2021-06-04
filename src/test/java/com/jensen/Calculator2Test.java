@@ -86,7 +86,6 @@ class Calculator2Test {
                 lab.divide(10,0);
 
             });
-            System.out.println("Counter: " + lab.getCounter());
         }
 }//end whenAddSubtractMultiplyDivide
 

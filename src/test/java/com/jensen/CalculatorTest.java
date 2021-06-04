@@ -45,7 +45,7 @@ class CalculatorTest {
 
         @Test
         @Order(3)
-        @DisplayName("Setters and Getters functionality test: Result")
+        @DisplayName("Setters and Getters functionality test: result")
         void testSetResult() {
             calculator.setResult(100);
 
@@ -91,7 +91,6 @@ class CalculatorTest {
 
             assertEquals(expectedResult, calculator.getResult());
         }
-
 
         @ParameterizedTest
         @DisplayName("Division test with valid input data")
