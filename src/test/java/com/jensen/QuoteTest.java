@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class QuoteTest {
@@ -23,10 +24,13 @@ public class QuoteTest {
     @DisplayName("Testing origin quote() method")
     class whenQuote {
 
+
         @Test
         @Order(1)
         @DisplayName("Test the origin quote() method")
         void TestQuote() {
+
+
             String q = lab.quote();
 
             assertNotNull(q);

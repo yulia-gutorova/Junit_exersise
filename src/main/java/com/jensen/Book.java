@@ -40,6 +40,17 @@ public class Book {
         this.author = author;
     }
 
+/*
+    @Test
+    public void testPagesNotEmpty() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () ->
+                {
+                    myBook.setPages(0);
+                }
+        );
+        assertTrue(exception.getMessage().contains("Pages can not be zero"));
+*/
+
 
 //------------------- Getters ------------------------------------------
         public Integer getPages() {return pages;}
