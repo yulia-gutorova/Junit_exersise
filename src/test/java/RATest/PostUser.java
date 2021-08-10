@@ -2,6 +2,8 @@ package RATest;
 
 import RATest.bodies.PostBody;
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.Test;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -9,7 +11,9 @@ import static io.restassured.RestAssured.given;
 
 public class PostUser {
 
-    public static void main(String[] args) {
+    @Test
+    public void postUser()
+    {
 
         RestAssured.baseURI = "https://reqres.in";
         given().log().all()
